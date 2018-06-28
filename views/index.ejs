@@ -2,40 +2,57 @@
 <html lang="en">
   <head>
     <title>smartCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet">
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
   <header>
-    <nav>
-      <h1>Welcome to smartCat</h1>
-      <button method="POST" id="logout"> Logout! </button>
+    <nav class="navbar">
+      <a href="#">
+        <img src="/assets/smartCat_logo.png" class="navbar-brand"alt="smartCat logo">
+        <h1>smartCat</h1>
+      </a>
+      <button method="POST" id="logout" class="btn">Logout</button>
     </nav>
 </header>
-  <body>
-    <div class ='side-bar'>
-      <img scr="people.png" height="100px" width="100px">
-      <h4>Meghn Markle</h4>
-      <button method="POST" id="edit-profile"> Edit </button>
-    </div>
-    <div class ='new-task-area'>
-      <button id="add-new-task" method="POST"> + </button>
-      <textarea>Some new task to be entered</textarea>
-    </div>
-    <div class="tasks-container">
-      <div class="task-field">
-      <p>Watch : Harry Potter</p>
-      <button method='POST' class="category"> Edit</button>
-    </div>
-      <div class="task-field">
-      <p>Watch : Suits</p>
-      <button method='POST' class="category"> Edit</button>
-    </div>
-  </div>
-<footer>Copyright lol</footer>
-  </body>
+<body>
+    <main>
+        <div class ="side-bar">
+          <img scr="people.png" height="100px" width="100px">
+          <h4>Megan Markle</h4>
+          <button method="POST" id="edit-profile" class="btn btn-outline-success"> Edit </button>
+        </div>
+        <div class="right-side">
+          <div class ="new-task-area">
+            <button id="add-new-task" method="POST"> + </button>
+            <textarea>Some new task to be entered</textarea>
+          </div>
+          <div class="tasks-container">
+            <div class="task-field">
+              <p>Watch : Harry Potter</p>
+              <button method='POST' class="category btn btn-outline-success"> Edit</button>
+            </div>
+            <div class="task-field">
+              <p>Watch : Suits</p>
+              <button method='POST' class="category btn btn-outline-success"> Edit</button>
+            </div>
+          </div>
+        </div>
+    
+  </main>
+  <footer>
+    <p>&copy 2018, smartCat</p>
+  </footer>
+</body>
 </html>
