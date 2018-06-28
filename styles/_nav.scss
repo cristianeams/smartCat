@@ -1,0 +1,35 @@
+nav {
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  position: fixed;
+
+  a {
+    display: flex;
+    align-items: center;
+    &:hover {
+      text-decoration: none; 
+    }
+    h1 {
+      color: black;
+      font-size: 2em;
+      &:hover {
+        color: $green; 
+        text-decoration: none;  
+      }
+     
+    }
+  }
+  button {
+    border: none;
+    font-size: 1em;
+    letter-spacing: -0.5px;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background-color: $green;
+      color: white;
+    } 
+  }
+}

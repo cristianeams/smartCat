@@ -1,0 +1,77 @@
+/*
+ * Global layout stuff
+ */
+body {
+   font-family: $font-family-base;
+
+   main {
+     display: flex;
+     height: 80vh;
+
+     button.btn-outline-success  {
+      color: $green;
+      border-color: $green;
+      &:hover {
+        background-color: $green;
+        color:white;
+      }
+     }
+     .side-bar {
+       flex: 1 1 15%;
+       text-align: center;
+       padding-top: 2em;
+       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);  
+       h4 {
+         padding: 1em;
+         font-size: 1em;
+         font-weight: 500;
+         letter-spacing: -0.5px;
+       }
+     }
+     .right-side {
+      flex: 1 1 80%;
+      text-align: center;
+    
+      .input-group {
+        padding: 2em;
+        ::placeholder {
+          color: black;
+          opacity: 1;
+        }
+        .form-control {
+          opacity: 0.48;
+          background-color: $green;
+          &:focus {
+            border-color: $green;
+          }
+        }
+      }
+      .tasks-container {
+        text-align: left;
+        padding-left: 3em;
+
+        h2 {
+          color: $green;
+          font-size: 1.8em;
+        }
+
+        .task-field {
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+          display: flex;
+          justify-content: space-between;
+          align-content: center;
+          
+          .fas {
+            color: $green;
+          }
+          .dropdown-item {
+            &:hover {
+              color: $green;
+            }
+          }
+
+        }
+      }
+     }
+   }
+ }
