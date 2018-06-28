@@ -1,0 +1,94 @@
+/*
+ * Global layout stuff
+ */
+body {
+   font-family: $font-family-base;
+
+   main {
+     display: flex;
+     padding-top: 8em;
+
+     button.btn-outline-success  {
+      color: $green;
+      border-color: $green;
+      &:hover {
+        background-color: $green;
+        color:white;
+      }
+     }
+     .side-bar {
+       flex: 1 1 15%;
+       text-align: center;
+       padding-top: 2em;
+       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);  
+    
+       h4 {
+         padding: 1em;
+         font-size: 1em;
+         font-weight: 500;
+         letter-spacing: -0.5px;
+       }
+     }
+     .right-side {
+      flex: 1 1 80%;
+      text-align: center;
+    
+      .input-group {
+        padding: 2em;
+        z-index: 0;
+        ::placeholder {
+          color: black;
+          opacity: 1;
+        }
+        .form-control {
+          opacity: 0.48;
+          background-color: $green;
+          &:focus {
+            border-color: $green;
+          }
+        }
+      }
+      .tasks-container {
+        text-align: left;
+        padding-left: 3em;
+
+        h2 {
+          color: $green;
+          font-size: 1.8em;
+          padding-bottom: 1em;
+        }
+
+        .task-field {
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 2em;
+
+          span {
+            display: flex;
+          }
+        
+          .fas {
+            color: $green;
+            border-radius: 10px;
+            padding: .5em;
+            margin-right: 1em;
+            transition: all .5s ease-in-out;
+            &:hover {
+              transform: rotateY(180deg);
+              color: white;
+              background-color: $green;
+            }
+          }
+          .dropdown-item {
+            &:hover {
+              color: $green;
+            }
+          }
+
+        }
+      }
+     }
+   }
+ }
