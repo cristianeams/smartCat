@@ -6,7 +6,7 @@ body {
 
    main {
      display: flex;
-     height: 80vh;
+     padding-top: 8em;
 
      button.btn-outline-success  {
       color: $green;
@@ -34,6 +34,7 @@ body {
     
       .input-group {
         padding: 2em;
+        z-index: 0;
         ::placeholder {
           color: black;
           opacity: 1;
@@ -53,16 +54,31 @@ body {
         h2 {
           color: $green;
           font-size: 1.8em;
+          padding-bottom: 1em;
         }
 
         .task-field {
           box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
           display: flex;
           justify-content: space-between;
-          align-content: center;
-          
+          align-items: center;
+          margin-bottom: 2em;
+
+          span {
+            display: flex;
+          }
+        
           .fas {
             color: $green;
+            border-radius: 10px;
+            padding: .5em;
+            margin-right: 1em;
+            transition: all .5s ease-in-out;
+            &:hover {
+              transform: rotateY(180deg);
+              color: white;
+              background-color: $green;
+            }
           }
           .dropdown-item {
             &:hover {
