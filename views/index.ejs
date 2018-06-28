@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <!-- Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet">
+    <!-- Font Awesome->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
@@ -34,19 +36,24 @@
           <button method="POST" id="edit-profile" class="btn btn-outline-success"> Edit </button>
         </div>
         <div class="right-side">
-          <div class ="new-task-area">
-            <button id="add-new-task" method="POST"> + </button>
-            <textarea>Some new task to be entered</textarea>
+          <div class="col-lg-10">
+            <div class="new-task-area input-group">
+                <input type="text" class="form-control" placeholder="Add a task..." aria-label="Add a task...">
+                <span class="input-group-btn">
+                <button class="btn btn-outline-success" id="add-new-task" method="POST" type="button">Add</button>
+                </span>
+            </div>
           </div>
           <div class="tasks-container">
-            <div class="task-field">
-              <p>Watch : Harry Potter</p>
-              <button method='POST' class="category btn btn-outline-success"> Edit</button>
-            </div>
-            <div class="task-field">
-              <p>Watch : Suits</p>
-              <button method='POST' class="category btn btn-outline-success"> Edit</button>
-            </div>
+              <h2>My Tasks</h2>
+              <div class="task-field">
+                <p>Watch : Harry Potter</p>
+                <button method='POST' class="category btn btn-outline-success"> Edit</button>
+              </div>
+              <div class="task-field">
+                <p>Watch : Suits</p>
+                <button method='POST' class="category btn btn-outline-success"> Edit</button>
+              </div>
           </div>
         </div>
     
