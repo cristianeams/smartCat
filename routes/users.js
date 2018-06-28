@@ -1,18 +1,22 @@
 "use strict";
-
 const express = require('express');
 const router  = express.Router();
-
 module.exports = (knex) => {
-
-  router.get("/", (req, res) => {
+  router.get("/:id", (req, res) => {
     knex
-      .select("*")
-      .from("users")
+      .select("id")
+      .from("users").where('name','=', req.params.id)
       .then((results) => {
-        res.json(results);
+        var userId = results[0].id
+        //console.log('RESULT:',userId);
+        return userId;
+        //res.json(results);
+    }).then((userId) => {
+      knex.select("description").from("tasks").where('users_id','=',userId).then((tasks)=> {
+        console.log(tasks)
+        res.json(tasks);
+      })
     });
   });
-
   return router;
 }
