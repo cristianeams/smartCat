@@ -1,6 +1,7 @@
 "use strict";
 const express = require('express');
 const router  = express.Router();
+const categoryGen = require('../lib/generateCategory')
 module.exports = (knex) => {
   router.get("/:id", (req, res) => {
     knex
@@ -19,13 +20,13 @@ module.exports = (knex) => {
     });
   });
 
- 
 
   router.post("/:id", (req,res) => {
     var tasktext = req.body.text; 
     var userId = req.params.id; 
+   var category = categoryGen.generateCategory(); 
     console.log('tasktext', tasktext)
-    knex.insert({description: tasktext, users_id:userId, category_id:1}).into('tasks').then(function(id) {
+    knex.insert({description: tasktext, users_id:userId, category_id:category}).into('tasks').then(function(id) {
     console.log('userID', userId, "tasktext", tasktext)
     })
   
