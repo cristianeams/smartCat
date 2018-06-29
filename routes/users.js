@@ -18,5 +18,15 @@ module.exports = (knex) => {
       })
     });
   });
+
+  // router.post("/:id", function (req,res) => {
+   
+  //  //knex('tasks').insert({description: })
+
+  // })
+
+
+
+
   return router;
 }
