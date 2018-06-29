@@ -39,15 +39,14 @@ body {
     
       .input-group {
         padding: 2em;
-        z-index: 0;
+        color: black;
         margin-bottom: 3em;
         ::placeholder {
           color: black;
-          opacity: 1;
+          
         }
         .form-control {
-          opacity: 0.48;
-          background-color: $green;
+          background: $green-bg;
           &:focus {
             border-color: $green;
           }
@@ -87,8 +86,6 @@ body {
             }
           }
           .dropdown-item {
-            background-color:white;
-            z-index: 1;
             &:hover {
               color: $green;
             }
