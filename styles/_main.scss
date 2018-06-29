@@ -36,6 +36,10 @@ body {
      .right-side {
       flex: 1 1 80%;
       text-align: center;
+
+        .new-task-area .input-group{
+          padding: 0;
+        }
     
       .input-group {
         padding: 2em;
