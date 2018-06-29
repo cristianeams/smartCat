@@ -21,7 +21,11 @@ body {
        text-align: center;
        padding-top: 2em;
        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);  
-    
+      
+      #profile_pic {
+        max-width: 100px;
+        max-height: 100px;
+      }
        h4 {
          padding: 1em;
          font-size: 1em;
