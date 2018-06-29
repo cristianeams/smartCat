@@ -79,6 +79,7 @@ function getCategoryName(categoryID) {
       $('.tasks-container').append(createTaskElement(tasks[i])); 
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
   });
   $("#changes").on("click", function () {
     var input = $("input#name").val();
@@ -89,6 +90,8 @@ function getCategoryName(categoryID) {
 
 });
 =======
+=======
+>>>>>>> c49d72d3f7da91571835bb9493b9b43b6ca99b81
   }
 
 
@@ -100,4 +103,7 @@ function getCategoryName(categoryID) {
 
 
 
+<<<<<<< HEAD
+>>>>>>> c49d72d3f7da91571835bb9493b9b43b6ca99b81
+=======
 >>>>>>> c49d72d3f7da91571835bb9493b9b43b6ca99b81
