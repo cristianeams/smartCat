@@ -13,7 +13,7 @@ module.exports = (knex) => {
         //res.json(results);
     }).then((userId) => {
       knex.select("description").from("tasks").where('users_id','=',userId).then((tasks)=> {
-        console.log(tasks)
+        //console.log(tasks)
         res.json(tasks);
       })
     });
