@@ -12,8 +12,8 @@ module.exports = (knex) => {
         return userId;
         //res.json(results);
     }).then((userId) => {
-      knex.select("description").from("tasks").where('users_id','=',userId).then((tasks)=> {
-        //console.log(tasks)
+      knex.select("description" , 'category_id').from("tasks").where('users_id','=',userId).then((tasks)=> {
+        console.log(tasks)
         res.json(tasks);
       })
     });
