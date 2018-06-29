@@ -54,15 +54,17 @@ $(document).ready(function () {
                     <p>${word} ${task.description}</p>
                     <span class="align-right">
                       ${icon}
-                    <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Category
-                    </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Watch</a>
-                        <a class="dropdown-item" href="#">Read</a>
-                        <a class="dropdown-item" href="#">Eat</a>
-                        <a class="dropdown-item" href="#">Buy</a>
+                    <div class="btn-group dropup">
+                      <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Category
+                      </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Watch</a>
+                          <a class="dropdown-item" href="#">Read</a>
+                          <a class="dropdown-item" href="#">Eat</a>
+                          <a class="dropdown-item" href="#">Buy</a>
                       </div>
+                    </div>
                     </span>
                   </div>  
       
