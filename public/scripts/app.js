@@ -5,7 +5,7 @@ $(document).ready(function () {
   function loadTasks() {
       $.ajax({
         method: "GET",
-        url: "/api/users/Bob",                      //as per instructions demo login not required 
+        url: "/api/users/2",                      //as per instructions demo login not required 
         success: function(tasksdata) {
           //console.log('LOAD TWEETS DATA:', tasksdata);
           console.log('hello im in ajax')
@@ -81,12 +81,37 @@ $(document).ready(function () {
         $('.tasks-container').append(createTaskElement(tasks[i])); 
       }
     }
+
     $("#changes").on("click", function () {
       var input = $("input#name").val();
       var imgUrl = $("input#url").val();
       $("h4").text(input);
       $("#profile_pic").attr("src", imgUrl).modal('hide');
     });
+
+    $('#add-new-task').on('click',function(task) {
+      task.preventDefault(); 
+      var data = $('.new-task-area input').val(); 
+      console.log('My text data:', data)
+      if(!data) {
+        alert('Please enter a task?');
+      } else {
+        $.ajax('/api/users/2', {
+          method: 'POST', 
+          data: {
+            text: data
+          } 
+        })
+        // .done(function(res) {
+        //   console.log('============>', res); 
+        //   loadTasks(res); 
+        //   $('.new-task-area input').val('')
+        // })
+      }
+    })
+    
+
+
   })
   
   
