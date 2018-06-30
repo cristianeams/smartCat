@@ -44,27 +44,16 @@ module.exports = (knex) => {
 
 
   router.post("/:id/update", (req, res) => {
-    // console.log(req.body.taskCatId);
-    //console.log("MY TASK ID REQUEST", req);
-    //console.log("No numb conversion:", req.body.taskAttr); 
-    //console.log("Attempted Number Conversion", Number(req.body.taskAttr))
-    knex('tasks').where('id', '=', req.body.taskAttr).update({category_id: req.body.taskCatId}).then((results) => {
-      console.log('hello'); 
+    var taskAtt = req.body.taskAttr;
+    var newCat = req.body.taskCatId
+    return knex('tasks').where('id', '=', taskAtt).update({category_id: newCat}).then((results) => {
+     console.log("updated category", results);
+    }).catch(()=> {
+      console.log("cannot categorize")
+    }).then(() => {
+      res.send("good job")
     })
-    // knex
-    //   .select("id")
-    //   .from("users").where('id', '=', req.params.id)
-    //   .then((results) => {
-    //     var userId = results[0].id
-    //     //console.log('RESULT:',userId);
-    //     return userId;
-    //     //res.json(results);
-    //   }).then((userId) => {
-    //     knex.select("description", 'category_id',"id").from("tasks").where('users_id', '=', userId).then((tasks) => {
-    //       console.log(tasks)
-    //       res.json(tasks);
-    //     })
-    //   });
+  
   });
 
   return router;

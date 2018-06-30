@@ -94,7 +94,10 @@ $(document).ready(function () {
         method:'POST', 
         data: {
           taskAttr: taskAttr,
-          taskCatId: taskCatId
+          taskCatId: taskCatId,
+          success: function(tasksdata) {
+            loadTasks(tasksdata);
+          }
         }
       })
     });
