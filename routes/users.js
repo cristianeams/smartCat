@@ -14,11 +14,22 @@ module.exports = (knex) => {
         return userId;
         //res.json(results);
       }).then((userId) => {
-        knex.select("description", 'category_id').from("tasks").where('users_id', '=', userId).then((tasks) => {
+        knex.select("description", 'category_id', "id").from("tasks").where('users_id', '=', userId).then((tasks) => {
           console.log(tasks)
           res.json(tasks);
         })
       });
+  });
+
+  router.get("/:id/profile", (req, res) => {
+    knex
+      .select("name")
+      .from("users").where('id', '=', req.params.id)
+      .then((results) => {
+        var userName = results[0].name
+        console.log('RESULTTTTT WHAT AM I OBJECT ARRAY?:', userName);
+        res.json(userName);
+      })
   });
 
 
@@ -38,7 +49,7 @@ module.exports = (knex) => {
       throw new Error("cannot categorize")
     }).then(() => {
       res.send("good job")
-    } )
+    })
 
   });
 
@@ -46,14 +57,30 @@ module.exports = (knex) => {
   router.post("/:id/update", (req, res) => {
     var taskAtt = req.body.taskAttr;
     var newCat = req.body.taskCatId
-    return knex('tasks').where('id', '=', taskAtt).update({category_id: newCat}).then((results) => {
-     console.log("updated category", results);
-    }).catch(()=> {
+    return knex('tasks').where('id', '=', taskAtt).update({
+      category_id: newCat
+    }).then((results) => {
+      console.log("updated category", results);
+    }).catch(() => {
       console.log("cannot categorize")
     }).then(() => {
       res.send("good job")
     })
-  
+  });
+
+
+  router.post("/:id/updateProfile", (req, res) => {
+    var userProfileId = req.params.id;
+    var newName = req.body.newName; 
+    return knex('users').where('id', '=', userProfileId).update({
+      name: newName
+    }).then((results) => {
+      console.log("updated category", results);
+    }).catch(() => {
+      console.log("cannot categorize")
+    }).then(() => {
+      res.send("good job")
+    })
   });
 
   return router;
