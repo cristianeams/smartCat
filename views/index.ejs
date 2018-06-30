@@ -1,199 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>smartCat</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <!-- Google Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet">
-    <!-- Font Awesome-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
-  </head>
-  <header>
-    <nav class="navbar">
-      <a href="#">
-        <img src="/assets/smartCat_logo.png" class="navbar-brand"alt="smartCat logo">
-        <h1>smartCat</h1>
-      </a>
-      <button method="POST" id="logout" class="btn">Logout</button>
-    </nav>
+<head>
+  <title>smartCat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet">
+  <!-- Font Awesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+</head>
+<header>
+  <nav class="navbar">
+    <a href="#">
+      <img src="/assets/smartCat_logo.png" class="navbar-brand" alt="smartCat logo">
+      <h1>smartCat</h1>
+    </a>
+    <button method="POST" id="logout" class="btn">Logout</button>
+  </nav>
 </header>
+
 <body>
-    <main>
-        <div class ="side-bar">
-          
-          <img src="https://www.shareicon.net/data/256x256/2016/08/18/814068_face_512x512.png" class="rounded-circle" id="profile_pic" alt="Profile Picture">
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  Name :
-                  <input type="text" name="name" id="name">
-                </div>
-                <div class="modal-body">
-                    URL :
-                    <input type="text" name="url" id="url">
-                  </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
-                  <button type="button" class="btn btn-outline-success" id="changes">Update</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <h4>Megan Markle</h4>
-          <!-- Button trigger modal -->
-          <button method="POST" id="edit-profile" data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-success"> Edit </button>
-        </div>
-        <div class="right-side">
-          <div class="col-lg-10">
-            <div class="new-task-area input-group">
-                <input type="text" class="form-control" placeholder="Add a task..." aria-label="Add a task..." value="">
-                <span class="input-group-btn">
-                <button class="btn btn-outline-success" id="add-new-task" method="POST" type="button">Add</button>
-                </span>
-            </div>
-          </div>
-          <div class="tasks-container">
-              <h2>My Tasks</h2>
-              <!-- <div class="task-field input-group col-lg-10">
-                <p>Watch: Harry Potter</p>
-                <span class="align-right">
-                  <i class="fas fa-film fa-2x"></i>
-                  <div class="btn-group dropup">
-                    <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Category
-                    </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Watch</a>
-                        <a class="dropdown-item" href="#">Read</a>
-                        <a class="dropdown-item" href="#">Eat</a>
-                        <a class="dropdown-item" href="#">Buy</a>
-                      </div>
-                  </div>
-                </span>
-              </div>  
-              <div class="task-field input-group col-lg-10">
-                <p>Read: Lord of The Flies</p>
-                <span class="align-right">
-                    <i class="fas fa-book fa-2x"></i>
-                    <div class="btn-group dropup">
-                      <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Category
-                      </button>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#">Watch</a>
-                          <a class="dropdown-item" href="#">Read</a>
-                          <a class="dropdown-item" href="#">Eat</a>
-                          <a class="dropdown-item" href="#">Buy</a>
-                        </div>
-                    </div>
-                </span> 
-              </div>  
-              <div class="task-field input-group col-lg-10">
-                <p>Eat: Sura korean BBQ</p>
-                <span class="align-right">
-                  <i class="fas fa-utensils fa-2x"></i>
-                  <div class="btn-group dropup">
-                    <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Category
-                    </button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Watch</a>
-                      <a class="dropdown-item" href="#">Read</a>
-                      <a class="dropdown-item" href="#">Eat</a>
-                      <a class="dropdown-item" href="#">Buy</a>
-                    </div>
-                  </div>
-                </span>
-              </div>  
-              <div class="task-field input-group col-lg-10">
-                <p>Buy: Toothbrush</p>
-                <span class="align-right">
-                  <i class="fas fa-shopping-cart fa-2x"></i>
-                  <div class="btn-group dropup">
-                    <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Category
-                    </button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Watch</a>
-                      <a class="dropdown-item" href="#">Read</a>
-                      <a class="dropdown-item" href="#">Eat</a>
-                      <a class="dropdown-item" href="#">Buy</a>
-                    </div>
-                  </div>
-                </span>
-              </div> 
-              <div class="task-field input-group col-lg-10">
-                  <p>Buy: Toothbrush</p>
-                  <span class="align-right">
-                    <i class="fas fa-shopping-cart fa-2x"></i>
-                    <div class="btn-group dropup">
-                      <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Category
-                      </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Watch</a>
-                        <a class="dropdown-item" href="#">Read</a>
-                        <a class="dropdown-item" href="#">Eat</a>
-                        <a class="dropdown-item" href="#">Buy</a>
-                      </div>
-                    </div>
-                  </span>
-                </div> 
-                <div class="task-field input-group col-lg-10">
-                    <p>Buy: Toothbrush</p>
-                    <span class="align-right">
+  <main>
+    <div class="side-bar">
 
-                      <i class="fas fa-shopping-cart fa-2x"></i>
-                      <div class="btn-group dropup">
-                        <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Category
-                        </button>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#">Watch</a>
-                          <a class="dropdown-item" href="#">Read</a>
-                          <a class="dropdown-item" href="#">Eat</a>
-                          <a class="dropdown-item" href="#">Buy</a>
-                        </div>
-                      </div>
-                    </span>
-
-                        <i class="fas fa-shopping-cart fa-2x"></i>
-                    <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Category
-                    </button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Watch</a>
-                      <a class="dropdown-item" href="#">Read</a>
-                      <a class="dropdown-item" href="#">Eat</a>
-                      <a class="dropdown-item" href="#">Buy</a>
-                    </div>
-                    </span> -->
-                  </div> 
-          </div>
+    </div>
+    <div class="right-side">
+      <div class="col-lg-10">
+        <div class="new-task-area input-group">
+          <input type="text" class="form-control" placeholder="Add a task..." aria-label="Add a task..." value="">
+          <span class="input-group-btn">
+            <button class="btn btn-outline-success" id="add-new-task" method="POST" type="button">Add</button>
+          </span>
         </div>
-    
+      </div>
+      <div class="tasks-container">
+        <h2>My Tasks</h2>
+        
+      </div>
+    </div>
+    </div>
+
   </main>
   <footer>
     <p>&copy 2018, smartCat</p>
   </footer>
 </body>
+
 </html>
