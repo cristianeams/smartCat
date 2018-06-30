@@ -23,22 +23,35 @@ module.exports = (knex) => {
 
 
   router.post("/:id", (req, res) => {
-    var tasktext = req.body.text;
+    var taskText = req.body.text;
     var userId = req.params.id;
-    categoryGen.generateCategory(tasktext).then((category) => {
-      console.log('tasktext', tasktext)
-      return knex.insert({
-        description: tasktext,
+ 
+
+  let wordsList = taskText.toLowerCase().split(' ');
+
+  if(categoryGen.eatKeywordsExists(wordsList)) {
+      let category = 1;
+      knex.insert({
+        description: taskText,
         users_id: userId,
         category_id: category
       }).into('tasks')
-    }).then(function (id) {
-      console.log('userID', userId, "tasktext", tasktext)
-    }).catch(()=> {
-      console.log("cannot categorize")
-    }).then(() => {
-      res.send("good job")
-    } )
+      console.log('Eats category', category);
+  } else { 
+    categoryGen.generateCategory(taskText)
+    .then((cat) => {
+      knex.insert({
+        description: taskText,
+        users_id: userId,
+        category_id: cat
+      }).into('tasks')
+      console.log('category', cat);
+    }).catch(err => {
+      console.log(err, "cannot categorize")
+    });
+  }
+
+
 
   });
 

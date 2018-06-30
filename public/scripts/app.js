@@ -78,7 +78,7 @@ $(document).ready(function () {
       console.log(tasks, 'taks')
       $('.tasks-container').empty(); 
       for (let i = 0; i < tasks.length; i++ ) {
-        $('.tasks-container').append(createTaskElement(tasks[i])); 
+        $('.tasks-container').prepend(createTaskElement(tasks[i])); 
       }
     }
 
@@ -101,12 +101,11 @@ $(document).ready(function () {
           data: {
             text: data
           } 
+        }).done(function(res) {
+          console.log('============>', res); 
+          loadTasks(res); 
+          $('.new-task-area input').val('')
         })
-        // .done(function(res) {
-        //   console.log('============>', res); 
-        //   loadTasks(res); 
-        //   $('.new-task-area input').val('')
-        // })
       }
     })
     
