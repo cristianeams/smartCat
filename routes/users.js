@@ -14,7 +14,7 @@ module.exports = (knex) => {
         return userId;
         //res.json(results);
       }).then((userId) => {
-        knex.select("description", 'category_id').from("tasks").where('users_id', '=', userId).then((tasks) => {
+        knex.select("description", 'category_id',"id").from("tasks").where('users_id', '=', userId).then((tasks) => {
           console.log(tasks)
           res.json(tasks);
         })
@@ -40,6 +40,30 @@ module.exports = (knex) => {
       res.send("good job")
     } )
 
+  });
+
+
+  router.post("/:id/update", (req, res) => {
+    //console.log("MY TASK ID REQUEST", req);
+    //console.log("No numb conversion:", req.body.taskAttr); 
+    //console.log("Attempted Number Conversion", Number(req.body.taskAttr))
+    knex('tasks').where('id', '=', req.body.taskAttr).update({category_id:2}).then((results) => {
+      console.log('hello'); 
+    })
+    // knex
+    //   .select("id")
+    //   .from("users").where('id', '=', req.params.id)
+    //   .then((results) => {
+    //     var userId = results[0].id
+    //     //console.log('RESULT:',userId);
+    //     return userId;
+    //     //res.json(results);
+    //   }).then((userId) => {
+    //     knex.select("description", 'category_id',"id").from("tasks").where('users_id', '=', userId).then((tasks) => {
+    //       console.log(tasks)
+    //       res.json(tasks);
+    //     })
+    //   });
   });
 
   return router;

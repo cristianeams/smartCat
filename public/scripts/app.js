@@ -8,7 +8,7 @@ $(document).ready(function () {
         url: "/api/users/2",                      //as per instructions demo login not required 
         success: function(tasksdata) {
           //console.log('LOAD TWEETS DATA:', tasksdata);
-          console.log('hello im in ajax')
+          //console.log('hello im in ajax')
           renderTasks(tasksdata);
         }
       })
@@ -16,7 +16,7 @@ $(document).ready(function () {
   
   function getCategoryIcon(categoryID) {
     let icon ;
-    console.log(categoryID);
+    //console.log(categoryID);
     if (categoryID === 1) {
        icon = '<i class="fas fa-utensils fa-2x"></i>'
     } else if (categoryID === 2) {
@@ -34,7 +34,7 @@ $(document).ready(function () {
     
     let word ;
     if (categoryID === 1) {
-       word = 'Eat: '
+      word = 'Eat: '
     } else if (categoryID === 2) {
       word = 'Watch: '
     } else if (categoryID === 3) {
@@ -46,8 +46,10 @@ $(document).ready(function () {
   }
   
     function createTaskElement(task) {
+      let taskAttr = task.id; 
+      //console.log(task); 
       let icon = getCategoryIcon(task.category_id);
-      console.log('icon' , icon);
+      //console.log('icon' , icon);
       let word = getCategoryName(task.category_id);
       let $task = $(`
       <div class="task-field input-group col-lg-10">
@@ -55,20 +57,41 @@ $(document).ready(function () {
                     <span class="align-right">
                       ${icon}
                     <div class="btn-group dropup">
-                      <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Category
+                      <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-attribute="${taskAttr}">
+                        ${word}
+                      <span class="caret"></span>
                       </button>
                         <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#">Watch</a>
-                          <a class="dropdown-item" href="#">Read</a>
-                          <a class="dropdown-item" href="#">Eat</a>
-                          <a class="dropdown-item" href="#">Buy</a>
+                          <a class="dropdown-item watch">Watch</a>
+                          <a class="dropdown-item read">Read</a>
+                          <a class="dropdown-item eat">Eat</a>
+                          <a class="dropdown-item buy">Buy</a>
                       </div>
                     </div>
                     </span>
                   </div>  
       
       `)
+
+      
+
+      $task.find('.dropdown-toggle').on('change', function(event){
+        //find .dropdown-toggle
+        console.log('Clicked/', taskAttr, 'EVENT>>>', event.currentTarget);
+        // $(this).parents(".dropup").find(".btn").htmlrs($(this).text() + ' <span class="caret"></span>');
+        // $(this).parents(".dropup").find(".btn").val($(this).data("value"));
+        
+        $.ajax('/api/users/2/update', {
+          method:'POST', 
+          data: {
+            taskAttr: taskAttr
+          }
+        })
+      });
+
+     
+      
+
     
       return $task; 
     }
@@ -81,6 +104,8 @@ $(document).ready(function () {
         $('.tasks-container').prepend(createTaskElement(tasks[i])); 
       }
     }
+
+    
 
     $("#changes").on("click", function () {
       var input = $("input#name").val();
