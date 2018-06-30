@@ -15,7 +15,7 @@ module.exports = (knex) => {
         //res.json(results);
       }).then((userId) => {
         knex.select("description", 'category_id').from("tasks").where('users_id', '=', userId).then((tasks) => {
-          console.log(tasks)
+          //console.log(tasks)
           res.json(tasks);
         })
       });
@@ -26,16 +26,16 @@ module.exports = (knex) => {
     var tasktext = req.body.text;
     var userId = req.params.id;
     categoryGen.generateCategory(tasktext).then((category) => {
-      console.log('tasktext', tasktext)
+      //console.log('tasktext', tasktext)
       return knex.insert({
         description: tasktext,
         users_id: userId,
-        category_id: category
+        category_id: category || 4
       }).into('tasks')
     }).then(function (id) {
-      console.log('userID', userId, "tasktext", tasktext)
+      //console.log('userID', userId, "tasktext", tasktext)
     }).catch(()=> {
-      console.log("cannot categorize")
+      throw new Error("cannot categorize")
     }).then(() => {
       res.send("good job")
     } )
