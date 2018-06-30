@@ -1,0 +1,50 @@
+.landing-grid {
+  width:80%;
+  height: 90vh;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 4em;
+  align-content: center;
+  justify-content: center;
+
+  p{
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    font-weight: 500;
+    align-self: center;
+    .green-text {
+      color: $green;
+      font-size: 1.875em;
+    }
+  }
+
+  .grid-left {
+    align-self: center;
+    max-width: 80%;
+    
+  }
+  .grid-right {
+    position: relative;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    button#login{
+      position: absolute;
+      top: 50%;
+      left: 40%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+    button#register{
+      position: absolute;
+      top: 50%;
+      right: 20%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+    
+  }
+
+}

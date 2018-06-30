@@ -43,6 +43,11 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+//Landing Page
+app.get("/landing", (req, res) => {
+  res.render("landing");
+});
+
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
 });
