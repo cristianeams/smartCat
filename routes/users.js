@@ -38,9 +38,22 @@ module.exports = (knex) => {
       console.log("cannot categorize")
     }).then(() => {
       res.send("good job")
-    } )
-
+    })
   });
+
+  // router.post("/:id/update", (req, res) => {
+  //   var catText = req.body.text;
+  //   return knex.update({
+  //     category_id: cat-task
+  //   }).into('tasks')
+  //   }).then(function (id) {
+  //     console.log("cat-text", catText)
+  //   }).catch(()=> {
+  //     console.log("cannot categorize")
+  //   }).then(() => {
+  //     res.send("good job")
+  //   })
+  // });
 
   return router;
 }
