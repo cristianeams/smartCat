@@ -44,10 +44,11 @@ module.exports = (knex) => {
 
 
   router.post("/:id/update", (req, res) => {
+    // console.log(req.body.taskCatId);
     //console.log("MY TASK ID REQUEST", req);
     //console.log("No numb conversion:", req.body.taskAttr); 
     //console.log("Attempted Number Conversion", Number(req.body.taskAttr))
-    knex('tasks').where('id', '=', req.body.taskAttr).update({category_id:2}).then((results) => {
+    knex('tasks').where('id', '=', req.body.taskAttr).update({category_id: req.body.taskCatId}).then((results) => {
       console.log('hello'); 
     })
     // knex

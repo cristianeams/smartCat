@@ -47,6 +47,7 @@ $(document).ready(function () {
   
     function createTaskElement(task) {
       let taskAttr = task.id; 
+      let taskCatId = task.category_id;
       //console.log(task); 
       let icon = getCategoryIcon(task.category_id);
       //console.log('icon' , icon);
@@ -57,42 +58,46 @@ $(document).ready(function () {
                     <span class="align-right">
                       ${icon}
                     <div class="btn-group dropup">
-                      <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-attribute="${taskAttr}">
-                        ${word}
-                      <span class="caret"></span>
-                      </button>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item watch">Watch</a>
-                          <a class="dropdown-item read">Read</a>
-                          <a class="dropdown-item eat">Eat</a>
-                          <a class="dropdown-item buy">Buy</a>
-                      </div>
+                        <select class="btn btn-outline-success">
+                          <option class="dropdown-item change">Change</option>
+                          <option class="dropdown-item eat">Eat</option>
+                          <option class="dropdown-item watch">Watch</option>
+                          <option class="dropdown-item read">Read</option>
+                          <option class="dropdown-item buy">Buy</option>
+                        </select>
                     </div>
-                    </span>
-                  </div>  
-      
-      `)
-
-      
-
-      $task.find('.dropdown-toggle').on('change', function(event){
-        //find .dropdown-toggle
-        console.log('Clicked/', taskAttr, 'EVENT>>>', event.currentTarget);
-        // $(this).parents(".dropup").find(".btn").htmlrs($(this).text() + ' <span class="caret"></span>');
-        // $(this).parents(".dropup").find(".btn").val($(this).data("value"));
-        
-        $.ajax('/api/users/2/update', {
-          method:'POST', 
-          data: {
-            taskAttr: taskAttr
-          }
-        })
-      });
-
-     
-      
-
-    
+                  </span>
+      </div>`)
+      $task.find('select').on('change',function(event){
+        var currentCat = $(this).find("option:selected").text();
+        console.log(currentCat);
+        if (currentCat === 'Eat') {
+          //console.log("food");
+          taskCatId = 1;
+          //console.log(taskCatId);
+        } else if (currentCat === 'Watch') {
+          //console.log("movie");
+          taskCatId = 2;
+          //console.log(taskCatId);
+        } else if (currentCat === 'Read') {
+          //console.log("book");
+          taskCatId = 3;
+          //console.log(taskCatId);
+        } else {
+          //console.log("product");
+          taskCatId = 4;
+          //console.log(taskCatId);
+        }
+      console.log(taskCatId);
+      console.log('Clicked/', taskAttr, 'EVENT>>>', event.currentTarget);
+      $.ajax('/api/users/2/update', {
+        method:'POST', 
+        data: {
+          taskAttr: taskAttr,
+          taskCatId: taskCatId
+        }
+      })
+    });
       return $task; 
     }
   
