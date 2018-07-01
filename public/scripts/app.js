@@ -63,8 +63,7 @@ $(document).ready(function () {
 
 
   function createUserProfile(user) {
-    console.log("USERRRRRR OBJECT OBJECT",user)
-    let $profile = $(`<img src="https://www.shareicon.net/data/256x256/2016/08/18/814068_face_512x512.png" class="rounded-circle" id="profile_pic"
+    let $profile = $(`<img src="https://i.imgur.com/HUZvaXJ.jpg" class="rounded-circle" id="profile_pic"
     alt="Profile Picture">
   <!-- Modal -->
   <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -79,10 +78,6 @@ $(document).ready(function () {
         <div class="modal-body">
           Name :
           <input type="text" name="name" id="name">
-        </div>
-        <div class="modal-body">
-          URL :
-          <input type="text" name="url" id="url">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
