@@ -21,12 +21,15 @@ body {
        text-align: center;
        padding-top: 2em;
        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);  
+       
       
       #profile_pic {
+        position: sticky;
         max-width: 100px;
         max-height: 100px;
       }
        h4 {
+        position: sticky;
          padding: 1em;
          font-size: 1em;
          font-weight: 500;
@@ -90,11 +93,7 @@ body {
               background-color: $green;
             }
           }
-          .dropdown-item {
-            &:hover {
-              color: $green;
-            }
-          }
+
 
         }
       }
