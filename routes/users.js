@@ -9,14 +9,13 @@ module.exports = (knex) => {
       .select("id")
       .from("users").where('id', '=', req.params.id)
       .then((results) => {
-        var userId = results[0].id
-        //console.log('RESULT:',userId);
+        var userId = results[0].id;
         return userId;
-        //res.json(results);
       }).then((userId) => {
         knex.select("description", 'category_id', "id").from("tasks").where('users_id', '=', userId).then((tasks) => {
-          console.log(tasks)
           res.json(tasks);
+        }).catch(() => {
+          throw new Error("cannot load tasks")
         })
       });
   });
@@ -26,9 +25,10 @@ module.exports = (knex) => {
       .select("name")
       .from("users").where('id', '=', req.params.id)
       .then((results) => {
-        var userName = results[0].name
-        console.log('RESULTTTTT WHAT AM I OBJECT ARRAY?:', userName);
+        var userName = results[0].name;
         res.json(userName);
+      }).catch(()=> {
+        throw new Error("cannot load profile")
       })
   });
 
@@ -50,36 +50,44 @@ module.exports = (knex) => {
     }).then(() => {
       res.send("good job")
     })
-
   });
-
 
   router.post("/:id/update", (req, res) => {
     var taskAtt = req.body.taskAttr;
-    var newCat = req.body.taskCatId
+    var newCat = req.body.taskCatId;
     return knex('tasks').where('id', '=', taskAtt).update({
       category_id: newCat
     }).then((results) => {
       console.log("updated category", results);
     }).catch(() => {
-      console.log("cannot categorize")
+      throw new Error("cannot categorize")
     }).then(() => {
       res.send("good job")
     })
   });
-
-
+  
   router.post("/:id/updateProfile", (req, res) => {
     var userProfileId = req.params.id;
     var newName = req.body.newName; 
     return knex('users').where('id', '=', userProfileId).update({
       name: newName
     }).then((results) => {
-      console.log("updated category", results);
+      console.log("updated name", results);
     }).catch(() => {
-      console.log("cannot categorize")
+      throw new Error("cannot update")
     }).then(() => {
-      res.send("good job")
+      res.send("update successful")
+    })
+  });
+
+  router.post("/:id/deleteTask", (req, res) => {
+    var taskAtt = req.body.taskAttr;
+    return knex('tasks').where('id', '=', taskAtt).del().then((results) => {
+      console.log("deleted task", results);
+    }).catch(() => {
+      throw new Error("cannot delete")
+    }).then(() => {
+      res.send("task deleted")
     })
   });
 

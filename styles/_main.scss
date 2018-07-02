@@ -3,7 +3,6 @@
  */
 body {
    font-family: $font-family-base;
-
    main {
      display: flex;
      padding-top: 8em;
@@ -18,8 +17,8 @@ body {
      }
      .side-bar {
        flex: 1 1 15%;
-       text-align: center;
        padding-top: 2em;
+       text-align: center;
        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);  
       
       #profile_pic {
@@ -68,14 +67,25 @@ body {
         }
 
         .task-field {
+          transition: border .5s;
+          border-radius: 10px;
           box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
           display: flex;
           justify-content: space-between;
           align-items: center;
           margin-bottom: 2em;
-
+          &:hover {
+            border: 1px solid $green;
+          }
           span {
             display: flex;
+            input[type="checkbox"]{ 
+              margin-right: 1em;
+              align-self: flex-start;
+              width: 1.4em;
+              height: 1.4em;
+              background-color: $green-bg;
+            }
           }
         
           .fas {
@@ -88,6 +98,7 @@ body {
               transform: rotateY(180deg);
               color: white;
               background-color: $green;
+              width:100%;
             }
           }
           .dropdown-item {

@@ -1,38 +1,33 @@
-# smartCat Project
-smartCat is a fullstack web application built with Node and Express to help users create a smart auto-categorizing.
+# smartCat Project 
+A smart, auto-categorizing todo list app. The user simply has to add the name of the thing, and it gets put into the correct list.
 
-## Final Product
-!["Screenshot of Landing Page"](https://github.com/JashanKhela/smartCat/blob/master/docs/Screen%20Shot%202018-07-02%20at%209.34.17%20AM.png?raw=true)
-!["Screenshot of Home Page"](https://github.com/JashanKhela/smartCat/blob/master/docs/Screen%20Shot%202018-07-02%20at%209.36.02%20AM.png?raw=true)
-!["Screenshot of Edit Name"](https://github.com/JashanKhela/smartCat/blob/master/docs/Screen%20Shot%202018-07-02%20at%209.36.21%20AM.png?raw=true)
-!["Screenshot of Editing A Task"](https://github.com/JashanKhela/smartCat/blob/master/docs/Screen%20Shot%202018-07-02%20at%209.36.31%20AM.png?raw=true)
+## Getting Started
 
+1. Install dependencies: `npm i`
+2. Run migrations: `npm run knex migrate:latest`
+  - Check the migrations folder to see what gets created in the DB
+3. Run the server: `npm run local`
+4. Visit `http://localhost:8080/`
 
 ## Dependencies
 
-- Node.js
-- Express
-- EJS
-- Dotenv
-- Knex
-- Knex Logger
-- XML-JS
-- Morgan
-- Node-SASS-Middleware
-- Pg
-- Request-promise
+- Node 5.10.x or above
+- NPM 3.8.x or above
 - Body-parser
-- Yelp-fusion
+- Dotenv
+- Ejs
+- Express
+- Knex
+- Knex-logger
+- Morgan
+- Node-sass middleware
+- PG
+- Request Promise
+- XML-Js
+- Yelp Fusion
 
+##Final Project
 
-## How to get started
+!["Screenshot of Landing Page"](https://github.com/JashanKhela/smartCat/blob/feature/delete/docs/Screen%20Shot%202018-07-01%20at%209.36.09%20PM.png?raw=true)
 
-- Install all the required dependencies (this can be done using 'npm install <package> command').
-- Run the development web server using the 'npm run local ' command.
-
-## Functionality
-- User login
-- User registeration
-- Add a Task
-- Update/Delete Taks
-- Edit User Info
+!["Screenshot of My Tasks"](https://github.com/JashanKhela/smartCat/blob/feature/delete/docs/Screen%20Shot%202018-07-01%20at%209.36.58%20PM.png?raw=true)
