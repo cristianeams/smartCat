@@ -1,29 +1,38 @@
-# Node Skeleton
+# smartCat Project
+smartCat is a fullstack web application built with Node and Express to help users create a smart auto-categorizing.
 
-## Project Setup
+## Final Product
+!["Screenshot of Landing Page"](https://github.com/JashanKhela/tinyApp/blob/master/docs/HomePage.png?raw=true)
+!["Screenshot of Home Page"](https://github.com/JashanKhela/tinyApp/blob/master/docs/UserPage.png?raw=true)
+!["Screenshot of Edit Name"](https://github.com/JashanKhela/tinyApp/blob/master/docs/NewLinkPage.png?raw=true)
+!["Screenshot of Editing A Task"](https://github.com/JashanKhela/tinyApp/blob/master/docs/LoginPage.png?raw=true)
 
-1. Create your own empty repo on GitHub
-2. Clone this repository (do not fork)
-  - Suggestion: When cloning, specify a different folder name that is relevant to your project
-3. Remove the git remote: `git remote rm origin`
-4. Add a remote for your origin: `git remote add origin <your github repo URL>`
-5. Push to the new origin: `git push -u origin master`
-6. Verify that the skeleton code now shows up in your repo on GitHub
-
-## Getting Started
-
-1. Create the `.env` by using `.env.example` as a reference: `cp .env.example .env`
-2. Update the .env file with your correct local information
-3. Install dependencies: `npm i`
-4. Fix to binaries for sass: `npm rebuild node-sass`
-5. Run migrations: `npm run knex migrate:latest`
-  - Check the migrations folder to see what gets created in the DB
-6. Run the seed: `npm run knex seed:run`
-  - Check the seeds file to see what gets seeded in the DB
-7. Run the server: `npm run local`
-8. Visit `http://localhost:8080/`
 
 ## Dependencies
 
-- Node 5.10.x or above
-- NPM 3.8.x or above
+- Node.js
+- Express
+- EJS
+- Dotenv
+- Knex
+- Knex Logger
+- XML-JS
+- Morgan
+- Node-SASS-Middleware
+- Pg
+- Request-promise
+- Body-parser
+- Yelp-fusion
+
+
+## How to get started
+
+- Install all the required dependencies (this can be done using 'npm install <package> command').
+- Run the development web server using the 'npm run local ' command.
+
+## Functionality
+- User login
+- User registeration
+- Add a Task
+- Update/Delete Taks
+- Edit User Info
