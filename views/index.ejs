@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>smartCat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
   <!-- Bootstrap CSS -->
@@ -24,25 +22,23 @@
     crossorigin="anonymous"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
 </head>
-<header>
-  <nav class="navbar">
-    <a href="#">
-      <img src="/assets/smartCat_logo.png" class="navbar-brand" alt="smartCat logo">
-      <h1>smartCat</h1>
-    </a>
-    <button method="POST" id="logout" class="btn">Logout</button>
-  </nav>
-</header>
-
 <body>
+  <header>
+    <nav class="navbar">
+      <a href="/landing">
+        <img src="/assets/smartCat_logo.png" class="navbar-brand" alt="smartCat logo">
+        <h1>smartCat</h1>
+      </a>
+      <a href="/landing"><button method="POST" id="logout" class="btn">Logout</button></a>
+    </nav>
+  </header>
   <main>
     <div class="side-bar">
-
     </div>
     <div class="right-side">
       <div class="col-lg-10">
         <div class="new-task-area input-group">
-          <input type="text" class="form-control" placeholder="Add a task..." aria-label="Add a task..." value="">
+          <input type="text" class="form-control" id="textbox" placeholder="Add a task..." aria-label="Add a task...">
           <span class="input-group-btn">
             <button class="btn btn-outline-success" id="add-new-task" method="POST" type="button">Add</button>
           </span>
@@ -50,15 +46,12 @@
       </div>
       <div class="tasks-container">
         <h2>My Tasks</h2>
-        
       </div>
     </div>
     </div>
-
   </main>
   <footer>
     <p>&copy 2018, smartCat</p>
   </footer>
 </body>
-
 </html>
