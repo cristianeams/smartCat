@@ -26,7 +26,7 @@ The solution? A smart, auto-categorizing todo list app. The user simply has to a
 - XML-Js
 - Yelp Fusion
 
-##Final Project
+## Final Project
 
 !["Screenshot of Landing Page"](https://github.com/cristianeams/smartCat/blob/master/docs/Screen%20Shot%202018-07-02%20at%209.34.17%20AM.png?raw=true)
 
@@ -36,10 +36,10 @@ The solution? A smart, auto-categorizing todo list app. The user simply has to a
 
 !["User can change category if a task has been mis-categorized"](https://github.com/cristianeams/smartCat/blob/master/docs/Screen%20Shot%202018-07-02%20at%209.36.31%20AM.png?raw=true)
 
-##Contributors 
+## Contributors 
 
-[Cristiane Silva](https://github.com/cristianeams/smartCat)
-[Jashan Khela](https://github.com/JashanKhela/smartCat)
+[Cristiane Silva](https://github.com/cristianeams/smartCat), 
+[Jashan Khela](https://github.com/JashanKhela/smartCat), 
 [Kayla Vu](https://github.com/kaylavu)
 
 
